@@ -1,4 +1,6 @@
 <?php
+namespace XoopsModules\Customfields;
+
 /**
  * CustomFieldHandler sınıfı
  */
@@ -7,7 +9,7 @@ if (!defined('XOOPS_ROOT_PATH')) {
     exit();
 }
 
-class CustomFieldHandler extends XoopsPersistableObjectHandler
+class CustomFieldHandler extends \XoopsPersistableObjectHandler
 {
     public function __construct($db)
     {

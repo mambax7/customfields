@@ -1,0 +1,249 @@
+/* Modern List Styles */
+.cf-manage {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa;
+    padding: 20px;
+    margin: -10px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #fff;
+    background-color: transparent;
+}
+
+.cf-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cf-header-content h1 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.cf-header-content p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.cf-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cf-btn-white {
+    background: white;
+    color: #667eea;
+}
+
+.cf-btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+}
+
+.cf-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.cf-filter-bar {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cf-filter-label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.cf-select {
+    padding: 8px 35px 8px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.cf-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+}
+
+.cf-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cf-table thead {
+    background: #f7fafc;
+}
+
+.cf-table th {
+    padding: 15px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.cf-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.cf-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.cf-table tbody tr:hover {
+    background: #f7fafc;
+}
+
+.cf-code {
+    font-family: 'Courier New', monospace;
+    background: #f7fafc;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.cf-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cf-badge-type {
+    background: #e6f2ff;
+    color: #0066cc;
+}
+
+.cf-badge-yes {
+    background: #d4edda;
+    color: #155724;
+}
+
+.cf-badge-no {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.cf-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cf-btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cf-btn-edit {
+    background: #e6f2ff;
+    color: #0066cc;
+}
+
+.cf-btn-edit:hover {
+    background: #0066cc;
+    color: white;
+}
+
+.cf-btn-delete {
+    background: #fee;
+    color: #c00;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.cf-btn-delete:hover {
+    background: #c00;
+    color: white;
+}
+
+.cf-empty {
+    padding: 60px 20px;
+    text-align: center;
+    color: #718096;
+}
+
+.cf-empty-icon {
+    font-size: 64px;
+    opacity: 0.3;
+    margin-bottom: 20px;
+}
+
+.cf-footer {
+    padding: 15px 20px;
+    background: #f7fafc;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #718096;
+}
+
+@media (max-width: 768px) {
+    .cf-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cf-table {
+        font-size: 12px;
+    }
+
+    .cf-table th,
+    .cf-table td {
+        padding: 10px;
+    }
+
+    .cf-actions {
+        flex-direction: column;
+    }
+}

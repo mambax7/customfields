@@ -3,11 +3,13 @@
  * CustomField sınıfı - Özel alan tanımları için
  */
 
+namespace XoopsModules\Customfields;
+
 if (!defined('XOOPS_ROOT_PATH')) {
     exit();
 }
 
-class CustomField extends XoopsObject
+class CustomField extends \XoopsObject
 {
     public function __construct()
     {

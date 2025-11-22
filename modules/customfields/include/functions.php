@@ -3,6 +3,17 @@
  * İlave alanları diğer modüllere entegre etmek için yardımcı fonksiyonlar
  */
 
+use  XoopsModules\Customfields\{
+    CustomField,
+    CustomFieldHandler,
+    CustomFieldData,
+    CustomFieldDataHandler,
+    Helper
+};
+
+
+
+
 if (!defined('XOOPS_ROOT_PATH')) {
     exit();
 }

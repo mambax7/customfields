@@ -6,4 +6,6 @@
  */
 
 include '../../mainfile.php';
-redirect_header(XOOPS_URL . '/admin.php?fct=modulesadmin&op=update&module=customfields', 2, 'Bu modül sadece admin panelinden kullanılır.');
+redirect_header(XOOPS_URL . '/admin.php?fct=modulesadmin&op=update&module=customfields', 2, _MD_CUSTOMFIELDS_ONLY_ADMIN);
+
+

@@ -1,0 +1,41 @@
+.cf-fields-wrapper {
+    margin-top: 10px;
+}
+
+.cf-fields-header {
+    margin-bottom: 15px;
+}
+
+.cf-fields-header h4 {
+    margin: 0 0 10px 0;
+}
+
+.cf-fields-header .btn-primary {
+    margin-bottom: 10px;
+}
+
+.cf-fields-filters {
+    margin-bottom: 10px;
+}
+
+.cf-fields-filters label {
+    margin-right: 10px;
+}
+
+.cf-fields-table {
+    width: 100%;
+}
+
+.cf-fields-table th,
+.cf-fields-table td {
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.cf-fields-table th {
+    font-weight: bold;
+}
+
+.cf-fields-pagenav {
+    margin-top: 10px;
+}
