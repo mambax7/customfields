@@ -1,0 +1,336 @@
+[2025-11-21 21:18:48] Test log - 2025-11-21 21:18:48
+[2025-11-21 21:18:57] Test log - 2025-11-21 21:18:57
+[2025-11-21 21:18:57] === MANUEL TEST BAŞLADI ===
+[2025-11-21 21:18:57] Item ID: 9999
+[2025-11-21 21:18:57] POST: Array
+(
+    [manual_test] => 
+    [customfield_1] => Test metin: 2025-11-21 21:18:57
+    [customfield_2] => Test resim yolu
+)
+
+[2025-11-21 21:18:57] customfields_saveData sonucu: true
+[2025-11-21 21:18:57] Veritabanı kontrolü: BAŞARILI
+[2025-11-21 21:18:57] === MANUEL TEST BİTTİ ===
+[2025-11-21 21:22:06] Test log - 2025-11-21 21:22:06
+[2025-11-21 21:22:06] === MANUEL TEST BAŞLADI ===
+[2025-11-21 21:22:06] Item ID: 9999
+[2025-11-21 21:22:06] POST: Array
+(
+    [manual_test] => 
+    [customfield_1] => Test metin: 2025-11-21 21:22:06
+    [customfield_2] => Test resim yolu
+)
+
+[2025-11-21 21:22:06] customfields_saveData sonucu: true
+[2025-11-21 21:22:06] Veritabanı kontrolü: BAŞARILI
+[2025-11-21 21:22:06] === MANUEL TEST BİTTİ ===
+
+=== PUBLISHER KAYIT 2025-11-21 21:22:57 ===
+Store başarılı!
+Item ID: 20
+POST verisi: Array
+(
+    [categoryid] => 1
+    [title] => hurma
+    [subtitle] => rr
+    [item_short_url] => rr
+    [editor] => dhtmltextarea
+    [summary] => regerg
+    [body] => regergerg
+    [dohtml] => 1
+    [dosmiley] => 1
+    [doxcode] => 1
+    [doimage] => 1
+    [dolinebreak] => 1
+    [votetype] => 1
+    [uid] => 1
+    [author_alias] => 
+    [status] => 2
+    [datesub] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 76800
+        )
+
+    [use_expire_yn] => 0
+    [dateexpire] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 77400
+        )
+
+    [notify] => 0
+    [additem] => Create
+    [imgcat_id] => 1
+    [image_nicename] => Enter image name
+    [item_file_name] => 
+    [item_file_description] => 
+    [item_file_status] => 1
+    [MAX_FILE_SIZE] => 0
+    [xoops_upload_file] => Array
+        (
+            [0] => item_upload_file
+        )
+
+    [item_meta_keywords] => 
+    [item_meta_description] => 
+    [allowcomments] => 1
+    [weight] => 0
+    [XOOPS_TOKEN_REQUEST] => 1f1004d2759962a87a624612fa07c9a7
+    [itemid] => 0
+)
+
+customfields_saveData() çağrıldı
+=== BİTTİ ===
+
+[2025-11-21 21:32:35] Test log - 2025-11-21 21:32:35
+[2025-11-21 21:32:37] Test log - 2025-11-21 21:32:37
+[2025-11-21 21:32:37] === MANUEL TEST BAŞLADI ===
+[2025-11-21 21:32:37] Item ID: 9999
+[2025-11-21 21:32:37] POST: Array
+(
+    [manual_test] => 
+    [customfield_1] => Test metin: 2025-11-21 21:32:37
+    [customfield_2] => Test resim yolu
+)
+
+[2025-11-21 21:32:37] customfields_saveData sonucu: true
+[2025-11-21 21:32:37] Veritabanı kontrolü: BAŞARILI
+[2025-11-21 21:32:37] === MANUEL TEST BİTTİ ===
+
+=== PUBLISHER KAYIT 2025-11-21 21:33:32 ===
+Store başarılı!
+Item ID: 21
+POST verisi: Array
+(
+    [categoryid] => 1
+    [title] => savsav
+    [subtitle] => asvsav
+    [item_short_url] => asv
+    [editor] => dhtmltextarea
+    [summary] => asvsav
+    [body] => asvsav
+    [dohtml] => 1
+    [dosmiley] => 1
+    [doxcode] => 1
+    [doimage] => 1
+    [dolinebreak] => 1
+    [votetype] => 1
+    [uid] => 1
+    [author_alias] => 
+    [status] => 2
+    [datesub] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 77400
+        )
+
+    [use_expire_yn] => 0
+    [dateexpire] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 78000
+        )
+
+    [notify] => 0
+    [additem] => Create
+    [imgcat_id] => 1
+    [image_nicename] => Enter image name
+    [item_file_name] => 
+    [item_file_description] => 
+    [item_file_status] => 1
+    [MAX_FILE_SIZE] => 0
+    [xoops_upload_file] => Array
+        (
+            [0] => item_upload_file
+        )
+
+    [item_meta_keywords] => 
+    [item_meta_description] => 
+    [allowcomments] => 1
+    [weight] => 0
+    [XOOPS_TOKEN_REQUEST] => fb9e5fed955ac2d94c0499c0e23f5346
+    [itemid] => 0
+)
+
+customfields_saveData() çağrıldı
+=== BİTTİ ===
+
+
+=== PUBLISHER KAYIT 2025-11-21 21:33:58 ===
+Store başarılı!
+Item ID: 21
+POST verisi: Array
+(
+    [categoryid] => 1
+    [title] => savsav
+    [subtitle] => asvsav
+    [item_short_url] => asv
+    [editor] => dhtmltextarea
+    [summary] => asvsav
+    [body] => asvsav
+    [dohtml] => 1
+    [dosmiley] => 1
+    [doxcode] => 1
+    [doimage] => 1
+    [dolinebreak] => 1
+    [votetype] => 1
+    [uid] => 1
+    [author_alias] => 
+    [status] => 2
+    [datesub] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 77400
+        )
+
+    [use_expire_yn] => 0
+    [dateexpire] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 78000
+        )
+
+    [notify] => 0
+    [additem] => Submit
+    [imgcat_id] => 1
+    [image_nicename] => Enter image name
+    [item_file_name] => 
+    [item_file_description] => 
+    [item_file_status] => 1
+    [MAX_FILE_SIZE] => 0
+    [xoops_upload_file] => Array
+        (
+            [0] => item_upload_file
+        )
+
+    [item_meta_keywords] => savsav,asvsav
+    [item_meta_description] => asvsav
+    [allowcomments] => 1
+    [weight] => 0
+    [XOOPS_TOKEN_REQUEST] => d29002f19e6a72dbd3ebec1bb8bb6f50
+    [itemid] => 21
+)
+
+customfields_saveData() çağrıldı
+=== BİTTİ ===
+
+
+=== PUBLISHER KAYIT 2025-11-21 21:34:23 ===
+Store başarılı!
+Item ID: 21
+POST verisi: Array
+(
+    [categoryid] => 1
+    [title] => savsav
+    [subtitle] => asvsav
+    [item_short_url] => asv
+    [editor] => dhtmltextarea
+    [summary] => asvsav
+    [body] => asvsav
+    [dohtml] => 1
+    [dosmiley] => 1
+    [doxcode] => 1
+    [doimage] => 1
+    [dolinebreak] => 1
+    [votetype] => 1
+    [uid] => 1
+    [author_alias] => 
+    [status] => 2
+    [datesub] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 77400
+        )
+
+    [use_expire_yn] => 0
+    [dateexpire] => Array
+        (
+            [date] => 11/21/2025
+            [time] => 78000
+        )
+
+    [notify] => 0
+    [additem] => Submit
+    [imgcat_id] => 1
+    [image_nicename] => Enter image name
+    [item_file_name] => 
+    [item_file_description] => 
+    [item_file_status] => 1
+    [MAX_FILE_SIZE] => 0
+    [xoops_upload_file] => Array
+        (
+            [0] => item_upload_file
+        )
+
+    [item_meta_keywords] => savsav,asvsav
+    [item_meta_description] => asvsav
+    [allowcomments] => 1
+    [weight] => 0
+    [XOOPS_TOKEN_REQUEST] => c7f5d97f917c111cef2a78255a216f52
+    [itemid] => 21
+)
+
+customfields_saveData() çağrıldı
+=== BİTTİ ===
+
+
+=== PUBLISHER KAYIT 2025-11-22 05:39:51 ===
+Store başarılı!
+Item ID: 22
+POST verisi: Array
+(
+    [categoryid] => 1
+    [title] => sdsd
+    [subtitle] => sdsdsd
+    [item_short_url] => sdds
+    [editor] => dhtmltextarea
+    [summary] => sdsdsd
+    [body] => dsdsdsds
+    [dohtml] => 1
+    [dosmiley] => 1
+    [doxcode] => 1
+    [doimage] => 1
+    [dolinebreak] => 1
+    [votetype] => 1
+    [uid] => 1
+    [author_alias] => 
+    [status] => 1
+    [datesub] => Array
+        (
+            [date] => 11/22/2025
+            [time] => 19800
+        )
+
+    [use_expire_yn] => 0
+    [dateexpire] => Array
+        (
+            [date] => 11/22/2025
+            [time] => 20400
+        )
+
+    [notify] => 0
+    [additem] => Create
+    [imgcat_id] => 1
+    [image_nicename] => Enter image name
+    [item_file_name] => 
+    [item_file_description] => 
+    [item_file_status] => 1
+    [MAX_FILE_SIZE] => 0
+    [xoops_upload_file] => Array
+        (
+            [0] => item_upload_file
+        )
+
+    [item_meta_keywords] => 
+    [item_meta_description] => 
+    [allowcomments] => 1
+    [weight] => 0
+    [XOOPS_TOKEN_REQUEST] => 2ddcd2eec788d5becc8d73cbee7336ec
+    [itemid] => 0
+)
+
+customfields_saveData() çağrıldı
+=== BİTTİ ===
+

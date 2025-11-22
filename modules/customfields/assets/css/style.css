@@ -1,0 +1,73 @@
+/* İlave Alanlar Modülü Stilleri */
+
+.customfields-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.customfield-item {
+    margin-bottom: 15px;
+}
+
+.customfield-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.customfield-item .required {
+    color: red;
+}
+
+.customfield-item .help-block {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.customfield-image {
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.current-file {
+    margin-top: 10px;
+    padding: 5px;
+    background: #e9ecef;
+    border-left: 3px solid #0066cc;
+}
+
+.custom-fields-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 2px solid #0066cc;
+}
+
+.custom-field-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff;
+    border-left: 3px solid #0066cc;
+}
+
+.custom-field-item strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.custom-field-item .field-value {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .customfield-image {
+        max-width: 100%;
+    }
+}
