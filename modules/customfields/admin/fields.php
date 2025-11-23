@@ -139,11 +139,11 @@ switch ($op) {
         }
 
         $fieldTypes = [
-            'text'     => _AM_CUSTOMFIELDS_FTYPE_TEXT,
-            'textarea' => _AM_CUSTOMFIELDS_FTYPE_TEXTAREA,
-            'select'   => _AM_CUSTOMFIELDS_FTYPE_SELECT,
-            'checkbox' => _AM_CUSTOMFIELDS_FTYPE_CHECKBOX,
-            'radio'    => _AM_CUSTOMFIELDS_FTYPE_RADIO,
+            'text'     => _AM_CUSTOMFIELDS_FIELD_TYPE_TEXT,
+            'textarea' => _AM_CUSTOMFIELDS_FIELD_TYPE_TEXTAREA,
+            'select'   => _AM_CUSTOMFIELDS_FIELD_TYPE_SELECT,
+            'checkbox' => _AM_CUSTOMFIELDS_FIELD_TYPE_CHECKBOX,
+            'radio'    => _AM_CUSTOMFIELDS_FIELD_TYPE_RADIO,
         ];
 
         $fieldData = [

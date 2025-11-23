@@ -13,7 +13,7 @@ class CustomFieldHandler extends \XoopsPersistableObjectHandler
 {
     public function __construct($db)
     {
-        parent::__construct($db, 'customfields_definitions', 'CustomField', 'field_id', 'field_name');
+        parent::__construct($db, 'customfields_definitions', CustomField::class, 'field_id', 'field_name');
     }
 
     public function getFieldsByModule($module_name, $show_in_form_only = false)

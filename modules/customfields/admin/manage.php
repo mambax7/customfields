@@ -82,13 +82,13 @@ switch ($op) {
             }
         }
 
-        $GLOBALS['xoopsTpl']->assign('modules', $modulesList);
+        $GLOBALS['xoopsTpl']->assign('xmodules', $modulesList);
         $GLOBALS['xoopsTpl']->assign('module_filter', $moduleFilter);
         $GLOBALS['xoopsTpl']->assign('fields', $fieldsList);
         $GLOBALS['xoopsTpl']->assign('has_fields', !empty($fieldsList));
         $GLOBALS['xoopsTpl']->assign('total_fields', count($fieldsList));
         $GLOBALS['xoopsTpl']->assign('token_html', $GLOBALS['xoopsSecurity']->getTokenHTML());
 
-        xoops_cp_footer();
         break;
 }
+require_once __DIR__ . '/admin_footer.php';

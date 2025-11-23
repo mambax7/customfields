@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css"
-      href="<{$xoops_url}>/modules/customfields/assets/css/customfields_admin_fields.css" />
+      href="<{$xoops_url}>/modules/customfields/assets/css/fields.css" />
 
 <div class="cf-fields-wrapper">
 

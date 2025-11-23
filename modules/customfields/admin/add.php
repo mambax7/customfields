@@ -175,11 +175,12 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('is_new', $isNew);
         $GLOBALS['xoopsTpl']->assign('field_id', $fieldId);
         $GLOBALS['xoopsTpl']->assign('field', $fieldData);
-        $GLOBALS['xoopsTpl']->assign('modules', $modulesList);
+        $GLOBALS['xoopsTpl']->assign('xmodules', $modulesList);
         $GLOBALS['xoopsTpl']->assign('options', $optionsList);
         $GLOBALS['xoopsTpl']->assign('field_types', $fieldTypes);
         $GLOBALS['xoopsTpl']->assign('token_html', $GLOBALS['xoopsSecurity']->getTokenHTML());
 
-        xoops_cp_footer();
         break;
 }
+
+require_once __DIR__ . '/admin_footer.php';

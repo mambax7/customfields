@@ -20,4 +20,4 @@ xoops_cp_header();
  * and used directly in the Smarty template.
  */
 
-xoops_cp_footer();
+require_once __DIR__ . '/admin_footer.php';

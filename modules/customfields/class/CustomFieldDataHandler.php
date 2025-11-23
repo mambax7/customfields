@@ -18,7 +18,7 @@ class CustomFieldDataHandler extends \XoopsPersistableObjectHandler
 {
     public function __construct($db)
     {
-        parent::__construct($db, 'customfields_data', 'CustomFieldData', 'data_id', 'field_value');
+        parent::__construct($db, 'customfields_data', CustomFieldData::class, 'data_id', 'field_value');
     }
 
     public function getItemData($module_name, $item_id)

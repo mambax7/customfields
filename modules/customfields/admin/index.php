@@ -53,4 +53,4 @@ $GLOBALS['xoopsTpl']->assign('total_modules', count($moduleStats));
 $GLOBALS['xoopsTpl']->assign('module_stats', $moduleStats);
 $GLOBALS['xoopsTpl']->assign('has_module_stats', !empty($moduleStats));
 
-xoops_cp_footer();
+require_once __DIR__ . '/admin_footer.php';

@@ -6,43 +6,7 @@ define('_AM_CUSTOMFIELDS_FIELDS', 'Field Management');
 define('_AM_CUSTOMFIELDS_FIELD_SAVED', 'Field saved successfully');
 define('_AM_CUSTOMFIELDS_FIELD_DELETED', 'Field deleted');
 define('_AM_CUSTOMFIELDS_ERROR', 'An error occurred');
-
-
-define('_AM_CUSTOMFIELDS_001', 'User Guide');
-define('_AM_CUSTOMFIELDS_002', 'Learn how to integrate additional fields into your modules');
-define('_AM_CUSTOMFIELDS_003', 'Quick Access');
-define('_AM_CUSTOMFIELDS_004', 'Add New Field');
-define('_AM_CUSTOMFIELDS_005', 'Manage Fields');
-define('_AM_CUSTOMFIELDS_006', 'News Module Integration');
-define('_AM_CUSTOMFIELDS_007', 'Add Form (Admin Panel)');
-define('_AM_CUSTOMFIELDS_008', 'Add additional fields to the news add/edit form in the admin panel.');
-define('_AM_CUSTOMFIELDS_009', 'Save Data');
-define('_AM_CUSTOMFIELDS_010', 'Save the additional field data when the news item is saved.');
-define('_AM_CUSTOMFIELDS_011', 'Delete Operation (Optional)');
-define('_AM_CUSTOMFIELDS_012', 'Delete additional field data when the news item is removed.');
-define('_AM_CUSTOMFIELDS_013', 'Display in Template');
-define('_AM_CUSTOMFIELDS_014', 'Display additional fields on the news article page.');
-define('_AM_CUSTOMFIELDS_015', 'Additional Information');
-define('_AM_CUSTOMFIELDS_016', 'Other Modules');
-define('_AM_CUSTOMFIELDS_017', 'You can integrate it into any XOOPS module using the same logic:');
-define('_AM_CUSTOMFIELDS_018', 'Tip:');
-define('_AM_CUSTOMFIELDS_019', 'Replace every occurrence of \'news\' with your target module name.');
-define('_AM_CUSTOMFIELDS_020', 'General Steps:');
-define('_AM_CUSTOMFIELDS_021', 'Define fields for the target module using the Additional Fields module');
-define('_AM_CUSTOMFIELDS_022', 'Add customfields_renderForm() to the target module’s admin form page');
-define('_AM_CUSTOMFIELDS_023', 'Add customfields_saveData() to the save process');
-define('_AM_CUSTOMFIELDS_024', 'Add the Smarty function to the template');
-define('_AM_CUSTOMFIELDS_025', 'Tips');
-define('_AM_CUSTOMFIELDS_026', 'Warning:');
-define('_AM_CUSTOMFIELDS_027', 'Do not use Turkish characters in field names');
-define('_AM_CUSTOMFIELDS_028', 'The uploads/customfields/ directory must be writable');
-define('_AM_CUSTOMFIELDS_029', 'Clear the cache after template changes');
-define('_AM_CUSTOMFIELDS_030', 'Best Practices:');
-define('_AM_CUSTOMFIELDS_031', 'Keep field names meaningful and short');
-define('_AM_CUSTOMFIELDS_032', 'You may use Turkish in titles');
-define('_AM_CUSTOMFIELDS_033', 'Select required fields carefully');
-define('_AM_CUSTOMFIELDS_034', 'Add descriptions to help users');
-define('_AM_CUSTOMFIELDS_035', 'API Functions');
+define('_AM_CUSTOMFIELDS_FIELD_NOT_FOUND', 'Field not found');
 
 define('_AM_CUSTOMFIELDS_GUIDE_TITLE', '📚 Usage Guide');
 define('_AM_CUSTOMFIELDS_GUIDE_SUBTITLE', 'Learn how to integrate custom fields into your modules');
@@ -119,13 +83,6 @@ define('_AM_CUSTOMFIELDS_ACTION_DELETE', 'Delete');
 define('_AM_CUSTOMFIELDS_CONFIRM_DELETE', 'Are you sure you want to delete this field?');
 
 define('_AM_CUSTOMFIELDS_NO_FIELDS', 'No fields have been added yet.');
-
-// Field types (for select)
-define('_AM_CUSTOMFIELDS_FTYPE_TEXT', 'Text');
-define('_AM_CUSTOMFIELDS_FTYPE_TEXTAREA', 'Textarea');
-define('_AM_CUSTOMFIELDS_FTYPE_SELECT', 'Select');
-define('_AM_CUSTOMFIELDS_FTYPE_CHECKBOX', 'Checkbox');
-define('_AM_CUSTOMFIELDS_FTYPE_RADIO', 'Radio button');
 
 // List filters and actions
 define('_AM_CUSTOMFIELDS_FILTER_MODULE', 'Module filter:');
@@ -238,3 +195,87 @@ define('_AM_CUSTOMFIELDS_MANAGE_EMPTY_TITLE', 'No Fields Defined Yet');
 define('_AM_CUSTOMFIELDS_MANAGE_EMPTY_MESSAGE',
     'Click the "Add New Field" button to create your first field.');
 define('_AM_CUSTOMFIELDS_MANAGE_EMPTY_CREATE_BTN', '➕ Create First Field');
+
+
+// Generic messages reused
+//define('_AM_CUSTOMFIELDS_TOKEN_ERROR', 'Security token error');
+//define('_AM_CUSTOMFIELDS_FIELD_SAVED', 'Field saved successfully');
+//define('_AM_CUSTOMFIELDS_SAVE_ERROR', 'Error while saving the field');
+//define('_AM_CUSTOMFIELDS_FIELD_NOT_FOUND', 'Field not found');
+
+// Add/Edit field form (add.php)
+define('_AM_CUSTOMFIELDS_FIELD_FORM_TITLE_NEW', '➕ Add New Field');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_TITLE_EDIT', '✏️ Edit Field');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_SUBTITLE', 'Fill in the field details and save');
+
+define('_AM_CUSTOMFIELDS_BREADCRUMB_HOME', '🏠 Home');
+define('_AM_CUSTOMFIELDS_BREADCRUMB_MANAGE', '📋 Field Management');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_CRUMB_NEW', 'Add New Field');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_CRUMB_EDIT', 'Edit Field');
+
+// Target module
+define('_AM_CUSTOMFIELDS_TARGET_MODULE_LABEL', '🎯 Target Module');
+define('_AM_CUSTOMFIELDS_TARGET_MODULE_PLACEHOLDER', 'Select a module...');
+define('_AM_CUSTOMFIELDS_TARGET_MODULE_HELP', 'Select which module this field will be used in.');
+
+// Field name
+define('_AM_CUSTOMFIELDS_FIELD_NAME_LABEL', '🔤 Field Name (variable)');
+define('_AM_CUSTOMFIELDS_FIELD_NAME_PLACEHOLDER', 'e.g. extra_image');
+define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP',
+    'Use only English letters, numbers, and underscores. Examples: extra_image, video_url.');
+
+// Field title
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_LABEL', '📝 Field Title');
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_PLACEHOLDER', 'Title shown to the user');
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP',
+    'Title displayed in the form. Examples: "Extra Image", "Video Link".');
+
+// Description
+define('_AM_CUSTOMFIELDS_FIELD_DESC_LABEL', '💬 Description');
+define('_AM_CUSTOMFIELDS_FIELD_DESC_PLACEHOLDER', 'Help text that will assist the user');
+define('_AM_CUSTOMFIELDS_FIELD_DESC_HELP',
+    'Optional help text shown below the field in the form.');
+
+// Field type + labels
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_LABEL', '🎨 Field Type');
+
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_TEXT', '📄 Text (Single Line)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_TEXTAREA', '📝 Textarea (Multi-line)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_EDITOR', '✏️ HTML Editor (WYSIWYG)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_IMAGE', '🖼️ Image Upload');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_FILE', '📎 File Upload');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_SELECT', '📋 Select (Dropdown)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_CHECKBOX', '☑️ Multiple Choice (Checkbox)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_RADIO', '🔘 Single Choice (Radio)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_DATE', '📅 Date Picker');
+
+// Options section
+define('_AM_CUSTOMFIELDS_OPTIONS_TABLE_VALUE', 'Value');
+define('_AM_CUSTOMFIELDS_OPTIONS_TABLE_LABEL', 'Label');
+define('_AM_CUSTOMFIELDS_OPTIONS_TABLE_ACTION', 'Action');
+
+define('_AM_CUSTOMFIELDS_OPTIONS_VALUE_PLACEHOLDER', '1');
+define('_AM_CUSTOMFIELDS_OPTIONS_LABEL_PLACEHOLDER', 'Option 1');
+define('_AM_CUSTOMFIELDS_OPTIONS_DELETE_BUTTON', '🗑️ Delete');
+define('_AM_CUSTOMFIELDS_OPTIONS_ADD_BUTTON', '➕ Add Option');
+
+define('_AM_CUSTOMFIELDS_FIELD_OPTIONS_ALERT', 'Please add at least one option.');
+
+// Order
+define('_AM_CUSTOMFIELDS_FIELD_ORDER_LABEL', '🔢 Order');
+define('_AM_CUSTOMFIELDS_FIELD_ORDER_HELP',
+    'Display order in the form (smaller numbers are shown first).');
+
+// Flags
+define('_AM_CUSTOMFIELDS_SETTINGS_LABEL', '⚙️ Settings');
+define('_AM_CUSTOMFIELDS_REQUIRED_CHECKBOX', '🔒 Required field (user cannot leave empty)');
+define('_AM_CUSTOMFIELDS_SHOW_IN_FORM_CHECKBOX', '👁️ Show in form (visible in admin form)');
+
+// Buttons
+define('_AM_CUSTOMFIELDS_BUTTON_BACK', '← Back');
+define('_AM_CUSTOMFIELDS_BUTTON_SAVE', '💾 Save');
+
+// Info box
+define('_AM_CUSTOMFIELDS_INFOBOX_HINT_LABEL', '💡 Tip:');
+define('_AM_CUSTOMFIELDS_INFOBOX_HINT_TEXT',
+    'After creating a field, you need to add the integration code to the target module’s admin page.');

@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css"
-      href="<{$xoops_url}>/modules/customfields/assets/css/customfields_admin_fields.css" />
+      href="<{$xoops_url}>/modules/customfields/assets/css/fields.css" />
 
 <div class="cf-fields-wrapper">
 
@@ -43,6 +43,9 @@
                     <span class="xoops-form-element-help">
                         <{$smarty.const._AM_CUSTOMFIELDS_FIELD_TARGET_MODULE_HELP}>
                     </span>
+                    <{if ($errors.target_module|default:'') ne ''}>
+                        <div class="cf-error"><{$errors.target_module|escape}></div>
+                    <{/if}>
                 </td>
             </tr>
 
@@ -59,6 +62,9 @@
                     <span class="xoops-form-element-help">
                         <{$smarty.const._AM_CUSTOMFIELDS_FIELD_NAME_HELP}>
                     </span>
+                    <{if ($errors.field_name|default:'') ne ''}>
+                        <div class="cf-error"><{$errors.field_name|escape}></div>
+                    <{/if}>
                 </td>
             </tr>
 
@@ -75,6 +81,9 @@
                     <span class="xoops-form-element-help">
                         <{$smarty.const._AM_CUSTOMFIELDS_FIELD_TITLE_HELP}>
                     </span>
+                    <{if ($errors.field_title|default:'') ne ''}>
+                        <div class="cf-error"><{$errors.field_title|escape}></div>
+                    <{/if}>
                 </td>
             </tr>
 
@@ -90,6 +99,9 @@
                     <span class="xoops-form-element-help">
                         <{$smarty.const._AM_CUSTOMFIELDS_FIELD_DESCRIPTION_HELP}>
                     </span>
+                    <{if ($errors.field_description|default:'') ne ''}>
+                        <div class="cf-error"><{$errors.field_description|escape}></div>
+                    <{/if}>
                 </td>
             </tr>
 

@@ -17,8 +17,8 @@
 
     <!-- Breadcrumb -->
     <div class="cf-breadcrumb">
-        <a href="index.php"><{$smarty.const._AM_CUSTOMFIELDS_BREADCRUMB_HOME}></a> /
-        <a href="manage.php"><{$smarty.const._AM_CUSTOMFIELDS_BREADCRUMB_MANAGE}></a> /
+        <a href="index.php"><{$smarty.const._AM_CUSTOMFIELDS_BREADCRUMB_HOME}></a>
+        <a href="manage.php"><{$smarty.const._AM_CUSTOMFIELDS_BREADCRUMB_MANAGE}></a>
         <strong>
             <{if $is_new}>
                 <{$smarty.const._AM_CUSTOMFIELDS_FIELD_FORM_CRUMB_NEW}>
@@ -49,7 +49,7 @@
                     <option value="">
                         <{$smarty.const._AM_CUSTOMFIELDS_TARGET_MODULE_PLACEHOLDER}>
                     </option>
-                    <{foreach from=$modules item=mod}>
+                    <{foreach from=$xmodules item=mod}>
                         <option value="<{$mod.dirname|escape}>"
                                 <{if $field.target_module == $mod.dirname}>selected="selected"<{/if}>>
                             <{$mod.name|escape}>
@@ -59,6 +59,9 @@
                 <span class="cf-help">
                     <{$smarty.const._AM_CUSTOMFIELDS_TARGET_MODULE_HELP}>
                 </span>
+                <{if ($errors.target_module|default:'') ne ''}>
+                    <div class="cf-error"><{$errors.target_module|escape}></div>
+                <{/if}>
             </div>
 
             <!-- Field name -->
@@ -76,6 +79,9 @@
                 <span class="cf-help">
                     <{$smarty.const._AM_CUSTOMFIELDS_FIELD_NAME_HELP}>
                 </span>
+                <{if ($errors.field_name|default:'') ne ''}>
+                    <div class="cf-error"><{$errors.field_name|escape}></div>
+                <{/if}>
             </div>
 
             <!-- Field title -->
@@ -93,6 +99,9 @@
                 <span class="cf-help">
                     <{$smarty.const._AM_CUSTOMFIELDS_FIELD_TITLE_HELP}>
                 </span>
+                <{if ($errors.field_title|default:'') ne ''}>
+                    <div class="cf-error"><{$errors.field_title|escape}></div>
+                <{/if}>
             </div>
 
             <!-- Description -->
@@ -107,6 +116,9 @@
                 <span class="cf-help">
                     <{$smarty.const._AM_CUSTOMFIELDS_FIELD_DESC_HELP}>
                 </span>
+                <{if ($errors.field_description|default:'') ne ''}>
+                    <div class="cf-error"><{$errors.field_description|escape}></div>
+                <{/if}>
             </div>
 
             <!-- Field type + options -->

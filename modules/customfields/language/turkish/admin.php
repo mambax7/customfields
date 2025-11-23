@@ -5,43 +5,7 @@ define('_AM_CUSTOMFIELDS_FIELDS', 'Alan Yönetimi');
 define('_AM_CUSTOMFIELDS_FIELD_SAVED', 'Alan başarıyla kaydedildi');
 define('_AM_CUSTOMFIELDS_FIELD_DELETED', 'Alan silindi');
 define('_AM_CUSTOMFIELDS_ERROR', 'Hata oluştu');
-
-
-define('_AM_CUSTOMFIELDS_001', 'Kullanım Rehberi');
-define('_AM_CUSTOMFIELDS_002', 'İlave alanları modüllerinize nasıl entegre edeceğinizi öğrenin');
-define('_AM_CUSTOMFIELDS_003', 'Hızlı Erişim');
-define('_AM_CUSTOMFIELDS_004', 'Yeni Alan Ekle');
-define('_AM_CUSTOMFIELDS_005', 'Alanları Yönet');
-define('_AM_CUSTOMFIELDS_006', 'News Modülü Entegrasyonu');
-define('_AM_CUSTOMFIELDS_007', 'Form Ekleme (Admin Panel)');
-define('_AM_CUSTOMFIELDS_008', 'News modülünün admin panelinde haber ekleme/düzenleme formuna ilave alanları ekleyin.');
-define('_AM_CUSTOMFIELDS_009', 'Veri Kaydetme');
-define('_AM_CUSTOMFIELDS_010', 'Haber kaydedildiğinde ilave alan verilerini de kaydedin.');
-define('_AM_CUSTOMFIELDS_011', 'Silme İşlemi (İsteğe Bağlı)');
-define('_AM_CUSTOMFIELDS_012', 'Haber silindiğinde ilave alan verilerini de silin.');
-define('_AM_CUSTOMFIELDS_013', 'Template\'te Gösterme');
-define('_AM_CUSTOMFIELDS_014', 'Haber görüntüleme sayfasında ilave alanları gösterin.');
-define('_AM_CUSTOMFIELDS_015', 'Ek Bilgiler');
-define('_AM_CUSTOMFIELDS_016', 'Diğer Modüller');
-define('_AM_CUSTOMFIELDS_017', 'Aynı mantıkla herhangi bir XOOPS modülüne entegre edebilirsiniz:');
-define('_AM_CUSTOMFIELDS_018', 'İpucu:');
-define('_AM_CUSTOMFIELDS_019', 'Sadece \'news\' yazan yerleri hedef modül adınız ile değiştirin.');
-define('_AM_CUSTOMFIELDS_020', 'Genel Adımlar:');
-define('_AM_CUSTOMFIELDS_021', 'İlave Alanlar modülünden hedef modül için alan tanımlayın');
-define('_AM_CUSTOMFIELDS_022', 'Hedef modülün admin form sayfasına customfields_renderForm() ekleyin');
-define('_AM_CUSTOMFIELDS_023', 'Kaydetme işlemine customfields_saveData() ekleyin');
-define('_AM_CUSTOMFIELDS_024', 'Template\'e Smarty fonksiyonu ekleyin');
-define('_AM_CUSTOMFIELDS_025', 'İpuçları');
-define('_AM_CUSTOMFIELDS_026', 'Dikkat:');
-define('_AM_CUSTOMFIELDS_027', 'Alan adlarında Türkçe karakter kullanmayın');
-define('_AM_CUSTOMFIELDS_028', 'uploads/customfields/ dizini yazılabilir olmalı');
-define('_AM_CUSTOMFIELDS_029', 'Template değişikliklerinden sonra cache\'i temizleyin');
-define('_AM_CUSTOMFIELDS_030', 'En İyi Uygulamalar:');
-define('_AM_CUSTOMFIELDS_031', 'Alan adlarını anlamlı ve kısa tutun');
-define('_AM_CUSTOMFIELDS_032', 'Başlıklarda Türkçe kullanabilirsiniz');
-define('_AM_CUSTOMFIELDS_033', 'Zorunlu alanları dikkatli seçin');
-define('_AM_CUSTOMFIELDS_034', 'Açıklama ekleyerek kullanıcılara yardımcı olun');
-define('_AM_CUSTOMFIELDS_035', 'API Fonksiyonları');
+define('_AM_CUSTOMFIELDS_FIELD_NOT_FOUND', 'Field not found');
 
 define('_AM_CUSTOMFIELDS_GUIDE_TITLE', '📚 Kullanım Rehberi');
 define('_AM_CUSTOMFIELDS_GUIDE_SUBTITLE', 'İlave alanları modüllerinize nasıl entegre edeceğinizi öğrenin');
@@ -118,13 +82,6 @@ define('_AM_CUSTOMFIELDS_CONFIRM_DELETE', 'Silmek istediğinizden emin misiniz?'
 
 define('_AM_CUSTOMFIELDS_NO_FIELDS', 'Henüz alan eklenmemiş.');
 
-// Field types (for select)
-define('_AM_CUSTOMFIELDS_FTYPE_TEXT', 'Metin');
-define('_AM_CUSTOMFIELDS_FTYPE_TEXTAREA', 'Metin Alanı');
-define('_AM_CUSTOMFIELDS_FTYPE_SELECT', 'Seçim Kutusu');
-define('_AM_CUSTOMFIELDS_FTYPE_CHECKBOX', 'Onay Kutusu');
-define('_AM_CUSTOMFIELDS_FTYPE_RADIO', 'Seçim Düğmesi');
-
 // List filters and actions
 define('_AM_CUSTOMFIELDS_FILTER_MODULE', 'Modül filtresi:');
 define('_AM_CUSTOMFIELDS_FILTER_TYPE', 'Tip filtresi:');
@@ -142,7 +99,7 @@ define('_AM_CUSTOMFIELDS_FIELD_TARGET_MODULE', 'Hedef modül');
 define('_AM_CUSTOMFIELDS_FIELD_TARGET_MODULE_HELP', 'Modül klasör adı (ör. news, publisher, content).');
 
 define('_AM_CUSTOMFIELDS_FIELD_NAME', 'Alan adı');
-define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP', 'İç alan tanımı, boşluk ve özel karakter kullanmayın.');
+//define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP', 'İç alan tanımı, boşluk ve özel karakter kullanmayın.');
 
 define('_AM_CUSTOMFIELDS_FIELD_TITLE', 'Başlık');
 define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP', 'Formlarda kullanıcılara gösterilen etiket.');
@@ -236,3 +193,90 @@ define('_AM_CUSTOMFIELDS_MANAGE_EMPTY_TITLE', 'Henüz Alan Eklenmemiş');
 define('_AM_CUSTOMFIELDS_MANAGE_EMPTY_MESSAGE',
     'Başlamak için "Yeni Alan Ekle" butonuna tıklayın.');
 define('_AM_CUSTOMFIELDS_MANAGE_EMPTY_CREATE_BTN', '➕ İlk Alanı Oluştur');
+
+// Genel mesajlar (tekrar kullanılabilir)
+//define('_AM_CUSTOMFIELDS_TOKEN_ERROR', 'Token hatası');
+//define('_AM_CUSTOMFIELDS_FIELD_SAVED', 'Alan başarıyla kaydedildi');
+//define('_AM_CUSTOMFIELDS_SAVE_ERROR', 'Kayıt hatası');
+//define('_AM_CUSTOMFIELDS_FIELD_NOT_FOUND', 'Alan bulunamadı');
+
+// Alan ekleme/düzenleme formu (add.php)
+define('_AM_CUSTOMFIELDS_FIELD_FORM_TITLE_NEW', '➕ Yeni Alan Ekle');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_TITLE_EDIT', '✏️ Alan Düzenle');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_SUBTITLE', 'Alan bilgilerini doldurun ve kaydedin');
+
+define('_AM_CUSTOMFIELDS_BREADCRUMB_HOME', '🏠 Ana Sayfa');
+define('_AM_CUSTOMFIELDS_BREADCRUMB_MANAGE', '📋 Alan Yönetimi');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_CRUMB_NEW', 'Yeni Alan Ekle');
+define('_AM_CUSTOMFIELDS_FIELD_FORM_CRUMB_EDIT', 'Alan Düzenle');
+
+// Hedef modül
+define('_AM_CUSTOMFIELDS_TARGET_MODULE_LABEL', '🎯 Hedef Modül');
+define('_AM_CUSTOMFIELDS_TARGET_MODULE_PLACEHOLDER', 'Modül Seçin...');
+define('_AM_CUSTOMFIELDS_TARGET_MODULE_HELP',
+    'Bu alanın hangi modülde kullanılacağını seçin.');
+
+// Alan adı
+define('_AM_CUSTOMFIELDS_FIELD_NAME_LABEL', '🔤 Alan Adı (değişken)');
+define('_AM_CUSTOMFIELDS_FIELD_NAME_PLACEHOLDER', 'örnek: ek_resim');
+define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP',
+    '⚠️ Sadece İngilizce harfler, rakamlar ve alt çizgi kullanın. Örnek: ek_resim, video_url.');
+
+// Alan başlığı
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_LABEL', '📝 Alan Başlığı');
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_PLACEHOLDER', 'Kullanıcıya gösterilecek başlık');
+//define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP',
+//    'Formda gösterilecek Türkçe başlık. Örnek: "Ek Resim", "Video Linki".');
+
+// Açıklama
+define('_AM_CUSTOMFIELDS_FIELD_DESC_LABEL', '💬 Açıklama');
+define('_AM_CUSTOMFIELDS_FIELD_DESC_PLACEHOLDER',
+    'Kullanıcıya yardımcı olacak açıklama metni');
+define('_AM_CUSTOMFIELDS_FIELD_DESC_HELP',
+    'Formda alanın altında gösterilecek yardım metni (isteğe bağlı).');
+
+// Alan tipi + etiketler
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_LABEL', '🎨 Alan Tipi');
+
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_TEXT', '📄 Metin (Tek Satır)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_TEXTAREA', '📝 Çok Satırlı Metin');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_EDITOR', '✏️ HTML Editör (WYSIWYG)');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_IMAGE', '🖼️ Resim Yükleme');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_FILE', '📎 Dosya Yükleme');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_SELECT', '📋 Açılır Liste');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_CHECKBOX', '☑️ Çoklu Seçim');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_RADIO', '🔘 Tekli Seçim');
+define('_AM_CUSTOMFIELDS_FIELD_TYPE_DATE', '📅 Tarih Seçici');
+
+// Seçenekler bölümü
+define('_AM_CUSTOMFIELDS_OPTIONS_TABLE_VALUE', 'Değer');
+define('_AM_CUSTOMFIELDS_OPTIONS_TABLE_LABEL', 'Etiket');
+define('_AM_CUSTOMFIELDS_OPTIONS_TABLE_ACTION', 'İşlem');
+
+define('_AM_CUSTOMFIELDS_OPTIONS_VALUE_PLACEHOLDER', '1');
+define('_AM_CUSTOMFIELDS_OPTIONS_LABEL_PLACEHOLDER', 'Seçenek 1');
+define('_AM_CUSTOMFIELDS_OPTIONS_DELETE_BUTTON', '🗑️ Sil');
+define('_AM_CUSTOMFIELDS_OPTIONS_ADD_BUTTON', '➕ Seçenek Ekle');
+
+define('_AM_CUSTOMFIELDS_FIELD_OPTIONS_ALERT', '⚠️ Lütfen en az bir seçenek ekleyin!');
+
+// Sıralama
+define('_AM_CUSTOMFIELDS_FIELD_ORDER_LABEL', '🔢 Sıralama');
+define('_AM_CUSTOMFIELDS_FIELD_ORDER_HELP',
+    'Formda gösterilme sırası (küçük sayı önce gösterilir).');
+
+// Seçenekler (bayraklar)
+define('_AM_CUSTOMFIELDS_SETTINGS_LABEL', '⚙️ Seçenekler');
+define('_AM_CUSTOMFIELDS_REQUIRED_CHECKBOX',
+    '🔒 Zorunlu Alan (Kullanıcı boş bırakamaz)');
+define('_AM_CUSTOMFIELDS_SHOW_IN_FORM_CHECKBOX',
+    '👁️ Formda Göster (Admin panelde görünür)');
+
+// Butonlar
+define('_AM_CUSTOMFIELDS_BUTTON_BACK', '← Geri Dön');
+define('_AM_CUSTOMFIELDS_BUTTON_SAVE', '💾 Kaydet');
+
+// Bilgi kutusu
+define('_AM_CUSTOMFIELDS_INFOBOX_HINT_LABEL', '💡 İpucu:');
+define('_AM_CUSTOMFIELDS_INFOBOX_HINT_TEXT',
+    'Alan oluşturduktan sonra hedef modülün admin sayfasına entegrasyon kodunu eklemeniz gerekecek.');

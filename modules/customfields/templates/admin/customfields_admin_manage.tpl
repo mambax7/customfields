@@ -27,7 +27,7 @@
                     <option value="">
                         <{$smarty.const._AM_CUSTOMFIELDS_MANAGE_FILTER_ALL_MODULES}>
                     </option>
-                    <{foreach from=$modules item=mod}>
+                    <{foreach from=$xmodules item=mod}>
                         <option value="<{$mod.dirname|escape}>"
                                 <{if $module_filter == $mod.dirname}>selected="selected"<{/if}>>
                             <{$mod.name|escape}>
