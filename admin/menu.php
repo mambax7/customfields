@@ -64,6 +64,12 @@ $adminmenu[] = [
 ];
 
 $adminmenu[] = [
+    'title' => defined('_MI_CUSTOMFIELDS_MENU_TESTS') ? _MI_CUSTOMFIELDS_MENU_TESTS : 'Tests',
+    'link'  => 'admin/tests2.php',
+    'icon'  => $pathModIcon32 . '/about.png',
+];
+
+$adminmenu[] = [
     'title' => _MI_CUSTOMFIELDS_MENU_ABOUT,
     'link' => 'admin/about.php',
     'icon' => $pathIcon32 . '/about.png',

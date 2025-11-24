@@ -76,6 +76,7 @@ $modversion['templates'] = [
     ['file' => 'customfields_admin_manage.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'customfields_admin_field_form.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'customfields_admin_tests.tpl', 'description' => '', 'type' => 'admin'],
+    ['file' => 'customfields_admin_tests2.tpl', 'description' => '', 'type' => 'admin'],
     // User
 //    ['file' => 'ZZZZZ.tpl', 'description' => ''],
 //    ['file' => 'ZZZZZ.tpl', 'description' => ''],
