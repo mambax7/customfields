@@ -8,7 +8,7 @@ $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 $modversion = array();
 
 $modversion['name'] = _MI_CUSTOMFIELDS_NAME;
-$modversion['version'] = '1.0.0';
+$modversion['version'] = '1.1.1';
 $modversion['description'] = _MI_CUSTOMFIELDS_DESC; //'Diğer modüllere özel alanlar eklemek için genişletilebilir modül';
 $modversion['author'] = 'Eren';
 $modversion['credits'] = 'XOOPS Türkiye';
@@ -75,6 +75,7 @@ $modversion['templates'] = [
     ['file' => 'customfields_admin_index.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'customfields_admin_manage.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'customfields_admin_field_form.tpl', 'description' => '', 'type' => 'admin'],
+    ['file' => 'customfields_admin_tests.tpl', 'description' => '', 'type' => 'admin'],
     // User
 //    ['file' => 'ZZZZZ.tpl', 'description' => ''],
 //    ['file' => 'ZZZZZ.tpl', 'description' => ''],

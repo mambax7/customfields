@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="CustomFields Module Coding Standard">
+    <description>PSR-12 based rules for XOOPS CustomFields module</description>
+    <file>class</file>
+    <file>include</file>
+    <file>admin</file>
+    <file>tests</file>
+    <exclude-pattern>vendor/*</exclude-pattern>
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+    </rule>
+</ruleset>

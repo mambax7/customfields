@@ -1,0 +1,9 @@
+parameters:
+  level: 3
+  paths:
+    - class
+    - include
+  ignoreErrors:
+    - '#Call to unknown method XoopsDatabase::queryF#'
+    - '#Access to an undefined property .*\$xoopsDB#'
+  checkMissingIterableValueType: false

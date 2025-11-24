@@ -18,3 +18,4 @@ define('_MI_CUSTOMFIELDS_MENU_02', 'Yeni Alan Ekle');
 define('_MI_CUSTOMFIELDS_MENU_03', 'Kullanım Rehberi');
 define('_MI_CUSTOMFIELDS_MENU_ABOUT', 'About');
 define('_MI_CUSTOMFIELDS_MENU_05', 'Fields');
+define('_MI_CUSTOMFIELDS_MENU_TESTS', 'Testler');

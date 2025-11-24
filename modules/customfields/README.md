@@ -1,4 +1,4 @@
-# XOOPS İlave Alanlar Modülü v1.0.0
+# XOOPS İlave Alanlar Modülü v1.1.1
 
 XOOPS CMS için geliştirilmiş kapsamlı özel alan yönetim modülü.
 
@@ -172,6 +172,69 @@ Select, checkbox veya radio tipi seçtiğinizde:
 - XSS koruması
 - Token kontrolü
 
+### Güvenlik ve yapılandırma (ileri seviye)
+
+Aşağıdaki sabitler ile modülün güvenlik davranışlarını yapılandırabilirsiniz. Bu sabitleri XOOPS kurulumunuzun uygun bir bootstrap/config dosyasında tanımlayın (ör. `mainfile.php` veya modülünüzün giriş noktasında):
+
+```php
+// Maksimum yükleme boyutu (bayt) – varsayılan: 5 MB
+define('CUSTOMFIELDS_MAX_UPLOAD_SIZE', 5 * 1024 * 1024);
+
+// İzin verilen hedef modüller – boşsa tüm modüllere izin verilir
+define('CUSTOMFIELDS_ALLOWED_MODULES', ['publisher', 'news']);
+
+// Anonim kullanıcının kaydetmesine izin ver (varsayılan: false)
+define('CUSTOMFIELDS_ALLOW_ANON_SAVE', false);
+
+// Yalnızca adminlerin kaydedebileceği modül adları
+define('CUSTOMFIELDS_ADMIN_ONLY_MODULES', ['sensitive_module']);
+
+// Tarih alanları için görüntüleme formatı (PHP date() formatı) – varsayılan: 'd.m.Y'
+define('CUSTOMFIELDS_DISPLAY_DATE_FORMAT', 'Y-m-d');
+
+// (İsteğe bağlı) İzinli uzantı/MIME listelerini özelleştirme örnekleri
+define('CUSTOMFIELDS_ALLOWED_IMAGE_EXT', ['jpg','jpeg','png','gif','webp']);
+define('CUSTOMFIELDS_ALLOWED_FILE_EXT', ['pdf','doc','docx','xls','xlsx','zip','rar','7z']);
+define('CUSTOMFIELDS_ALLOWED_IMAGE_MIME', ['image/jpeg','image/png','image/gif','image/webp']);
+define('CUSTOMFIELDS_ALLOWED_FILE_MIME', ['application/pdf']);
+```
+
+Uploads klasörü (Apache) için `.htaccess` zaten eklenmiştir: `uploads/customfields/.htaccess`. Nginx eşdeğeri için şu kuralları sunucu bloğunuza ekleyin:
+
+```nginx
+location ^~ /uploads/customfields/ {
+    default_type application/octet-stream;
+    add_header X-Content-Type-Options nosniff always;
+
+    # PHP, CGI, script çalıştırmayı engelle
+    location ~* \.(php|phtml|phps|phar|cgi|pl|asp|aspx)$ {
+        return 403;
+    }
+}
+```
+
+## ⚙️ Yapılandırma Erişimcileri (Config accessors)
+
+Modül, sabitleri doğrudan okumak yerine merkezi yardımcı erişimciler kullanır (BC korunur):
+
+```php
+\XoopsModules\Customfields\Config::getUploadDir();          // Dosya sistemi yolu (uploads/customfields/)
+\XoopsModules\Customfields\Config::getMaxUploadSize();      // Varsayılan 5 MB, CUSTOMFIELDS_MAX_UPLOAD_SIZE ile değiştirilebilir
+\XoopsModules\Customfields\Config::getAllowedExtensions($type); // 'image' veya 'file' için uzantılar
+\XoopsModules\Customfields\Config::getAllowedMimes($type);      // 'image' veya 'file' için MIME listesi
+\XoopsModules\Customfields\Config::getDisplayDateFormat();  // Tarih gösterim biçimi (render sırasında kullanılır)
+```
+
+Tarih biçimi `DateRenderer` ve `customfields_formatValue()` içindeki eski yol tarafından kullanılır.
+
+## 🖼️ Renderer Mimarisi
+
+Alan değerlerinin HTML çıktısı tip bazlı renderer sınıflarıyla üretilir (Text, Textarea, Select, Radio, Checkbox, Date, Image, File). Yeni tipler eklemek veya davranışı özelleştirmek için `class/Renderer/` altına yeni bir renderer ekleyebilir ve `RendererFactory` içine yönlendirme ekleyebilirsiniz. Uygun kaçış (`htmlspecialchars`/`customfields_esc`) ve güvenli URL (`customfields_url`) çıktıları varsayılan olarak uygulanır.
+
+## 📑 Admin listeleme, sayfalama ve filtreler
+
+`admin/manage.php` ve `admin/fields.php` üzerinde sayfalama ve filtreleme (modül, tip) desteklenir. Arayüz mevcut filtreleri koruyarak gezinme sağlar ve büyük listelerde performansı iyileştirir.
+
 ## ⚙️ Gereksinimler
 
 - XOOPS 2.5.x veya üzeri
@@ -193,3 +256,32 @@ Sorularınız için XOOPS Türkiye forumu
 ---
 
 **Not:** Modülü kullanmadan önce test sunucusunda denemenizi öneririz.
+
+---
+
+## 🧪 Test nasıl çalıştırılır
+
+Önkoşullar: XOOPS vendor altında PHPUnit kurulu olmalıdır.
+
+Komutlar:
+
+```
+xoops_lib\vendor\bin\phpunit -c modules\customfields\phpunit.xml.dist
+```
+
+veya modül dizininden:
+
+```
+..\..\xoops_lib\vendor\bin\phpunit -c phpunit.xml.dist
+```
+
+Kod stil ve statik analiz araçlarını çalıştırmak için:
+
+```
+phpcs -s -p --standard=modules\customfields\phpcs.xml modules\customfields
+phpstan analyse -c modules\customfields\phpstan.neon
+```
+
+Tipik sorunlar ve ipuçları:
+- `tests/bootstrap.php` `XOOPS_ROOT_PATH` sabitini proje köküne işaret edecek şekilde otomatik belirler; ortamınıza göre gerekirse güncelleyin.
+- `fileinfo` eklentisi yoksa MIME doğrulaması atlanır, ancak uzantı kontrolü yine de uygulanır.

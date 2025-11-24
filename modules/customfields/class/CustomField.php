@@ -11,8 +11,17 @@ if (!defined('XOOPS_ROOT_PATH')) {
 
 class CustomField extends \XoopsObject
 {
+    /**
+     * Cache for decoded options during object lifetime to avoid repeated json_decode.
+     * @var array|null
+     */
+    private $optionsCache = null;
+
     public function __construct()
     {
+        if (is_callable(['\\XoopsObject', '__construct'])) {
+            parent::__construct();
+        }
         $this->initVar('field_id', XOBJ_DTYPE_INT, null, false);
         $this->initVar('target_module', XOBJ_DTYPE_TXTBOX, null, true, 50);
         $this->initVar('field_name', XOBJ_DTYPE_TXTBOX, null, true, 100);
@@ -30,11 +39,17 @@ class CustomField extends \XoopsObject
 
     public function getOptions()
     {
+        if ($this->optionsCache !== null) {
+            return $this->optionsCache;
+        }
         $options = $this->getVar('field_options');
         if (empty($options)) {
-            return array();
+            $this->optionsCache = array();
+            return $this->optionsCache;
         }
-        return json_decode($options, true);
+        $decoded = json_decode($options, true);
+        $this->optionsCache = is_array($decoded) ? $decoded : array();
+        return $this->optionsCache;
     }
 
     public function setOptions($options)
@@ -42,5 +57,7 @@ class CustomField extends \XoopsObject
         if (is_array($options)) {
             $this->setVar('field_options', json_encode($options));
         }
+        // Invalidate cache after update
+        $this->optionsCache = null;
     }
 }

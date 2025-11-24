@@ -77,7 +77,7 @@
                        class="cf-input"
                        placeholder="<{$smarty.const._AM_CUSTOMFIELDS_FIELD_NAME_PLACEHOLDER}>" />
                 <span class="cf-help">
-                    <{$smarty.const._AM_CUSTOMFIELDS_FIELD_NAME_HELP}>
+                    <{$smarty.const._AM_CUSTOMFIELDS_FIELD_NAME_HELP2}>
                 </span>
                 <{if ($errors.field_name|default:'') ne ''}>
                     <div class="cf-error"><{$errors.field_name|escape}></div>
@@ -97,7 +97,7 @@
                        class="cf-input"
                        placeholder="<{$smarty.const._AM_CUSTOMFIELDS_FIELD_TITLE_PLACEHOLDER}>" />
                 <span class="cf-help">
-                    <{$smarty.const._AM_CUSTOMFIELDS_FIELD_TITLE_HELP}>
+                    <{$smarty.const._AM_CUSTOMFIELDS_FIELD_TITLE_HELP2}>
                 </span>
                 <{if ($errors.field_title|default:'') ne ''}>
                     <div class="cf-error"><{$errors.field_title|escape}></div>

@@ -139,6 +139,12 @@
                 <{/if}>
             </div>
 
+            <{if $pagenav}>
+                <div class="cf-fields-pagenav" style="margin-top:10px;">
+                    <{$pagenav}>
+                </div>
+            <{/if}>
+
         <{else}>
             <div class="cf-empty">
                 <div class="cf-empty-icon">📭</div>

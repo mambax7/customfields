@@ -1,4 +1,28 @@
 <?php
+
+// Admin language constants for Tests tab (Turkish)
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TITLE')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TITLE', 'Testler');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_DESC')) {
+    define('_AM_CUSTOMFIELDS_TESTS_DESC', 'CustomFields entegrasyonu için geliştirici test yardımcıları. Üretim ortamlarında kullanmayın.');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_SCRIPT')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TH_SCRIPT', 'Betik');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_DESC')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TH_DESC', 'Açıklama');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_ACTION')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TH_ACTION', 'İşlem');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_OPEN_BTN')) {
+    define('_AM_CUSTOMFIELDS_TESTS_OPEN_BTN', 'Aç');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_NOTE')) {
+    define('_AM_CUSTOMFIELDS_TESTS_NOTE', 'Not: Bazı betikler tanılama bilgileri gösterebilir. Yalnızca admin erişimine açık tutun ve üretim ortamında kullanmaktan kaçının.');
+}
+
 // Admin menü
 define('_AM_CUSTOMFIELDS_OVERVIEW', 'Genel Bakış');
 define('_AM_CUSTOMFIELDS_FIELDS', 'Alan Yönetimi');
@@ -219,14 +243,12 @@ define('_AM_CUSTOMFIELDS_TARGET_MODULE_HELP',
 // Alan adı
 define('_AM_CUSTOMFIELDS_FIELD_NAME_LABEL', '🔤 Alan Adı (değişken)');
 define('_AM_CUSTOMFIELDS_FIELD_NAME_PLACEHOLDER', 'örnek: ek_resim');
-define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP',
-    '⚠️ Sadece İngilizce harfler, rakamlar ve alt çizgi kullanın. Örnek: ek_resim, video_url.');
+define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP2', '⚠️ Sadece İngilizce harfler, rakamlar ve alt çizgi kullanın. Örnek: ek_resim, video_url.');
 
 // Alan başlığı
 define('_AM_CUSTOMFIELDS_FIELD_TITLE_LABEL', '📝 Alan Başlığı');
 define('_AM_CUSTOMFIELDS_FIELD_TITLE_PLACEHOLDER', 'Kullanıcıya gösterilecek başlık');
-//define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP',
-//    'Formda gösterilecek Türkçe başlık. Örnek: "Ek Resim", "Video Linki".');
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP2', 'Formda gösterilecek Türkçe başlık. Örnek: "Ek Resim", "Video Linki".');
 
 // Açıklama
 define('_AM_CUSTOMFIELDS_FIELD_DESC_LABEL', '💬 Açıklama');

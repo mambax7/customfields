@@ -17,10 +17,12 @@
  * @author     XOOPS Development Team
  */
 $pathIcon32 = Xmf\Module\Admin::iconUrl('', '32');
+// Escape dynamic path in the img src attribute to avoid XSS if pathIcon32 is influenced
+$pathIcon32Esc = htmlspecialchars((string)$pathIcon32, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 
 echo "<div class='adminfooter'>\n"
      . "  <div style='text-align: center;'>\n"
-     . "    <a href='https://xoops.org' rel='external'><img src='{$pathIcon32}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n"
+     . "    <a href='https://xoops.org' rel='external'><img src='{$pathIcon32Esc}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n"
      . "  </div>\n"
      . '  ' . _AM_MODULEADMIN_ADMIN_FOOTER . "\n"
      . '</div>';

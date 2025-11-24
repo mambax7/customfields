@@ -1,5 +1,28 @@
 <?php
 
+// Admin language constants for Tests tab
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TITLE')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TITLE', 'Tests');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_DESC')) {
+    define('_AM_CUSTOMFIELDS_TESTS_DESC', 'Developer test helpers for CustomFields integration. Use on non-production systems.');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_SCRIPT')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TH_SCRIPT', 'Script');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_DESC')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TH_DESC', 'Description');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_ACTION')) {
+    define('_AM_CUSTOMFIELDS_TESTS_TH_ACTION', 'Action');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_OPEN_BTN')) {
+    define('_AM_CUSTOMFIELDS_TESTS_OPEN_BTN', 'Open');
+}
+if (!defined('_AM_CUSTOMFIELDS_TESTS_NOTE')) {
+    define('_AM_CUSTOMFIELDS_TESTS_NOTE', 'Note: Some scripts may expose diagnostic information. Keep them admin-only and avoid use on production.');
+}
+
 // Admin menu
 define('_AM_CUSTOMFIELDS_OVERVIEW', 'Overview');
 define('_AM_CUSTOMFIELDS_FIELDS', 'Field Management');
@@ -221,14 +244,12 @@ define('_AM_CUSTOMFIELDS_TARGET_MODULE_HELP', 'Select which module this field wi
 // Field name
 define('_AM_CUSTOMFIELDS_FIELD_NAME_LABEL', '🔤 Field Name (variable)');
 define('_AM_CUSTOMFIELDS_FIELD_NAME_PLACEHOLDER', 'e.g. extra_image');
-define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP',
-    'Use only English letters, numbers, and underscores. Examples: extra_image, video_url.');
+define('_AM_CUSTOMFIELDS_FIELD_NAME_HELP2', 'Use only English letters, numbers, and underscores. Examples: extra_image, video_url.');
 
 // Field title
 define('_AM_CUSTOMFIELDS_FIELD_TITLE_LABEL', '📝 Field Title');
 define('_AM_CUSTOMFIELDS_FIELD_TITLE_PLACEHOLDER', 'Title shown to the user');
-define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP',
-    'Title displayed in the form. Examples: "Extra Image", "Video Link".');
+define('_AM_CUSTOMFIELDS_FIELD_TITLE_HELP2', 'Title displayed in the form. Examples: "Extra Image", "Video Link".');
 
 // Description
 define('_AM_CUSTOMFIELDS_FIELD_DESC_LABEL', '💬 Description');

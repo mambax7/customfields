@@ -3,26 +3,26 @@
  * Publisher item.php Kontrol ve Analiz
  */
 
-include '../../mainfile.php';
+require __DIR__ . '/header.php';
 
-echo '<html><head><meta charset="utf-8"><title>Publisher Kontrol</title></head><body>';
-echo '<h2>Publisher item.php Kontrol</h2>';
+echo '<html><head><meta charset="utf-8"><title>' . _MD_CUSTOMFIELDS_PUB_CHECK_PAGE_TITLE . '</title></head><body>';
+echo '<h2>' . _MD_CUSTOMFIELDS_PUB_ITEM_CHECK . '</h2>';
 
 $item_php = XOOPS_ROOT_PATH . '/modules/publisher/admin/item.php';
 
 if (!file_exists($item_php)) {
-    echo '<p style="color: red;">❌ Publisher item.php bulunamadı!</p>';
-    echo '<p>Yol: ' . $item_php . '</p>';
+    echo '<p style="color: red;">❌ ' . _MD_CUSTOMFIELDS_FILE_NOT_FOUND . '</p>';
+    echo '<p>' . _MD_CUSTOMFIELDS_FILE_PATH . ': ' . htmlspecialchars($item_php, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</p>';
     exit;
 }
 
-echo '<p style="color: green;">✅ Publisher item.php bulundu</p>';
+echo '<p style="color: green;">✅ ' . _MD_CUSTOMFIELDS_FILE_FOUND . '</p>';
 
 $lines = file($item_php);
 $content = implode('', $lines);
 
 // 1. customfields_renderForm kontrolü
-echo '<h3>1. customfields_renderForm() Kontrolü</h3>';
+echo '<h3>' . _MD_CUSTOMFIELDS_SECTION_RENDERFORM . '</h3>';
 $renderForm_found = false;
 $renderForm_line = 0;
 
@@ -30,14 +30,14 @@ foreach ($lines as $num => $line) {
     if (strpos($line, 'customfields_renderForm') !== false) {
         $renderForm_found = true;
         $renderForm_line = $num + 1;
-        echo '<p style="color: green;">✅ customfields_renderForm() BULUNDU<br>';
-        echo 'Satır: ' . $renderForm_line . '</p>';
+        echo '<p style="color: green;">✅ customfields_renderForm() ' . _MD_CUSTOMFIELDS_FILE_FOUND . '<br>';
+        echo sprintf(_MD_CUSTOMFIELDS_FOUND_AT_LINE, (int)$renderForm_line) . '</p>';
         echo '<pre style="background: #f0f0f0; padding: 10px; border-left: 3px solid green;">';
         for ($i = max(0, $num-2); $i < min(count($lines), $num+3); $i++) {
             if ($i == $num) {
-                echo '<strong style="color: green;">' . htmlspecialchars($lines[$i]) . '</strong>';
+                echo '<strong style="color: green;">' . htmlspecialchars($lines[$i], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</strong>';
             } else {
-                echo htmlspecialchars($lines[$i]);
+                echo htmlspecialchars($lines[$i], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
             }
         }
         echo '</pre>';
@@ -46,11 +46,11 @@ foreach ($lines as $num => $line) {
 }
 
 if (!$renderForm_found) {
-    echo '<p style="color: red;">❌ customfields_renderForm() BULUNAMADI!</p>';
+    echo '<p style="color: red;">❌ customfields_renderForm() ' . _MD_CUSTOMFIELDS_NOT_FOUND . '</p>';
 }
 
 // 2. customfields_saveData kontrolü
-echo '<h3>2. customfields_saveData() Kontrolü</h3>';
+echo '<h3>' . _MD_CUSTOMFIELDS_SECTION_SAVEDATA . '</h3>';
 $saveData_found = false;
 $saveData_line = 0;
 
@@ -58,14 +58,14 @@ foreach ($lines as $num => $line) {
     if (strpos($line, 'customfields_saveData') !== false) {
         $saveData_found = true;
         $saveData_line = $num + 1;
-        echo '<p style="color: green;">✅ customfields_saveData() BULUNDU<br>';
-        echo 'Satır: ' . $saveData_line . '</p>';
+        echo '<p style="color: green;">✅ customfields_saveData() ' . _MD_CUSTOMFIELDS_FILE_FOUND . '<br>';
+        echo sprintf(_MD_CUSTOMFIELDS_FOUND_AT_LINE, (int)$saveData_line) . '</p>';
         echo '<pre style="background: #f0f0f0; padding: 10px; border-left: 3px solid green;">';
         for ($i = max(0, $num-3); $i < min(count($lines), $num+5); $i++) {
             if ($i == $num) {
-                echo '<strong style="color: green;">' . htmlspecialchars($lines[$i]) . '</strong>';
+                echo '<strong style="color: green;">' . htmlspecialchars($lines[$i], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</strong>';
             } else {
-                echo htmlspecialchars($lines[$i]);
+                echo htmlspecialchars($lines[$i], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
             }
         }
         echo '</pre>';
@@ -74,11 +74,11 @@ foreach ($lines as $num => $line) {
 }
 
 if (!$saveData_found) {
-    echo '<p style="color: red;">❌ customfields_saveData() BULUNAMADI!</p>';
+    echo '<p style="color: red;">❌ customfields_saveData() ' . _MD_CUSTOMFIELDS_NOT_FOUND . '</p>';
 }
 
 // 3. Akış kontrolü - en kritik kısım
-echo '<h3>3. Kod Akışı Analizi (EN ÖNEMLİ)</h3>';
+echo '<h3>' . _MD_CUSTOMFIELDS_FLOW_ANALYSIS . '</h3>';
 
 $store_line = 0;
 $first_redirect_after_store = 0;
@@ -112,23 +112,21 @@ foreach ($lines as $num => $line) {
 }
 
 echo '<div style="background: #f0f0f0; padding: 15px; border-left: 4px solid #2196F3;">';
-echo '<strong>Kod Akışı:</strong><br>';
-echo '1️⃣ $itemObj->store() → Satır <strong>' . $store_line . '</strong><br>';
-echo '2️⃣ customfields_saveData() → Satır <strong>' . $saveData_after_store . '</strong><br>';
-echo '3️⃣ redirect_header() → Satır <strong>' . $first_redirect_after_store . '</strong><br>';
+echo '1️⃣ ' . sprintf(_MD_CUSTOMFIELDS_FLOW_STEP1, (int)$store_line) . '<br>';
+echo '2️⃣ ' . sprintf(_MD_CUSTOMFIELDS_FLOW_STEP2, (int)$saveData_after_store) . '<br>';
+echo '3️⃣ ' . sprintf(_MD_CUSTOMFIELDS_FLOW_STEP3, (int)$first_redirect_after_store) . '<br>';
 echo '</div>';
 
-echo '<h3>4. SONUÇ</h3>';
+echo '<h3>4. ' . _MD_CUSTOMFIELDS_RESULT . '</h3>';
 
 if ($saveData_after_store > 0 && $first_redirect_after_store > 0) {
     if ($saveData_after_store < $first_redirect_after_store) {
         echo '<div style="background: #d4edda; padding: 20px; border-left: 5px solid #28a745; margin: 20px 0;">';
-        echo '<h2 style="color: #28a745; margin-top: 0;">✅ MÜKEMMEL!</h2>';
-        echo '<p><strong>customfields_saveData()</strong> (Satır ' . $saveData_after_store . ') <strong>redirect_header()</strong> (Satır ' . $first_redirect_after_store . ')\'dan <strong>ÖNCE</strong> çağrılıyor.</p>';
-        echo '<p style="color: green;"><strong>Kod yapısı DOĞRU!</strong></p>';
+        echo '<h2 style="color: #28a745; margin-top: 0;">✅ ' . _MD_CUSTOMFIELDS_RESULT_OK_TITLE . '</h2>';
+        echo '<p>' . _MD_CUSTOMFIELDS_RESULT_OK_MSG . '</p>';
         echo '</div>';
         
-        echo '<h3>5. Sıradaki Adımlar</h3>';
+        echo '<h3>5. ' . _MD_CUSTOMFIELDS_NEXT_STEPS . '</h3>';
         echo '<ol>';
         echo '<li>✅ Kod yapısı doğru</li>';
         echo '<li>🧪 Gerçek test yapın:</li>';
@@ -148,38 +146,36 @@ if ($saveData_after_store > 0 && $first_redirect_after_store > 0) {
         
     } else {
         echo '<div style="background: #f8d7da; padding: 20px; border-left: 5px solid #dc3545; margin: 20px 0;">';
-        echo '<h2 style="color: #dc3545; margin-top: 0;">❌ SORUN!</h2>';
-        echo '<p><strong>customfields_saveData()</strong> (Satır ' . $saveData_after_store . ') <strong>redirect_header()</strong> (Satır ' . $first_redirect_after_store . ')\'dan <strong>SONRA</strong> çağrılıyor!</p>';
-        echo '<p style="color: red;"><strong>Bu yüzden veri kaydedilmiyor!</strong></p>';
-        echo '<p><strong>Çözüm:</strong> customfields_saveData() çağrısını yukarı, redirect_header()\'dan öncesine taşıyın.</p>';
+        echo '<h2 style="color: #dc3545; margin-top: 0;">❌ ' . _MD_CUSTOMFIELDS_RESULT_BAD_TITLE . '</h2>';
+        echo '<p>' . _MD_CUSTOMFIELDS_RESULT_BAD_MSG . '</p>';
         echo '</div>';
     }
 } else {
     echo '<div style="background: #fff3cd; padding: 20px; border-left: 5px solid #ffc107;">';
-    echo '<h2 style="color: #856404; margin-top: 0;">⚠️ UYARI</h2>';
+    echo '<h2 style="color: #856404; margin-top: 0;">⚠️ ' . _MD_CUSTOMFIELDS_RESULT . '</h2>';
     if ($saveData_after_store == 0) {
-        echo '<p>customfields_saveData() store() sonrasında bulunamadı!</p>';
+        echo '<p>' . _MD_CUSTOMFIELDS_NO_SAVE_FOUND . '</p>';
     }
     if ($first_redirect_after_store == 0) {
-        echo '<p>redirect_header() bulunamadı!</p>';
+        echo '<p>' . _MD_CUSTOMFIELDS_NO_REDIRECT_FOUND . '</p>';
     }
     echo '</div>';
 }
 
 // 6. Kod bloğunu göster
-echo '<h3>6. Store() Sonrası Kod Bloğu</h3>';
-echo '<p>Satır ' . $store_line . ' - ' . ($store_line + 25) . ' arası:</p>';
+echo '<h3>6. ' . _MD_CUSTOMFIELDS_CODE_BLOCK_AFTER_STORE . '</h3>';
+echo '<p>' . sprintf('Satır %d - %d arası:', (int)$store_line, (int)($store_line + 25)) . '</p>';
 echo '<pre style="background: #f5f5f5; padding: 10px; border: 1px solid #ddd; overflow-x: auto; font-size: 12px; line-height: 1.4;">';
 for ($i = $store_line - 1; $i < min(count($lines), $store_line + 24); $i++) {
     $display_num = $i + 1;
     $line_content = $lines[$i];
     
     if (strpos($line_content, 'customfields_saveData') !== false) {
-        echo '<span style="background: #d4edda; font-weight: bold;">' . str_pad($display_num, 4, ' ', STR_PAD_LEFT) . '│ ' . htmlspecialchars($line_content) . '</span>';
+        echo '<span style="background: #d4edda; font-weight: bold;">' . str_pad($display_num, 4, ' ', STR_PAD_LEFT) . '│ ' . htmlspecialchars($line_content, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</span>';
     } elseif (strpos($line_content, 'redirect_header') !== false) {
-        echo '<span style="background: #f8d7da; font-weight: bold;">' . str_pad($display_num, 4, ' ', STR_PAD_LEFT) . '│ ' . htmlspecialchars($line_content) . '</span>';
+        echo '<span style="background: #f8d7da; font-weight: bold;">' . str_pad($display_num, 4, ' ', STR_PAD_LEFT) . '│ ' . htmlspecialchars($line_content, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</span>';
     } else {
-        echo str_pad($display_num, 4, ' ', STR_PAD_LEFT) . '│ ' . htmlspecialchars($line_content);
+        echo str_pad($display_num, 4, ' ', STR_PAD_LEFT) . '│ ' . htmlspecialchars($line_content, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     }
 }
 echo '</pre>';

@@ -11,6 +11,7 @@ use XoopsModules\Customfields\{
 
 require_once __DIR__ . '/admin_header.php';
 require_once XOOPS_ROOT_PATH . '/modules/customfields/include/functions.php';
+require_once XOOPS_ROOT_PATH . '/class/pagenav.php';
 
 $fieldHandler = customfields_getFieldHandler();
 
@@ -42,6 +43,11 @@ switch ($op) {
         xoops_cp_header();
 
         $moduleFilter = Request::getString('module', '', 'GET');
+        $page        = max(1, (int)Request::getInt('page', 1, 'GET'));
+        $limit       = (int)Request::getInt('limit', 20, 'GET');
+        if ($limit < 1) { $limit = 20; }
+        if ($limit > 100) { $limit = 100; }
+        $start       = ($page - 1) * $limit;
 
         // Build module list for filter
         $moduleHandler = xoops_getHandler('module');
@@ -56,7 +62,7 @@ switch ($op) {
             ];
         }
 
-        // Fetch fields with optional module filter
+        // Fetch fields with optional module filter (with pagination)
         $fieldCriteria = new \CriteriaCompo();
         if ($moduleFilter !== '') {
             $fieldCriteria->add(new \Criteria('target_module', $moduleFilter));
@@ -64,6 +70,11 @@ switch ($op) {
         $fieldCriteria->setSort('target_module, field_order');
         $fieldCriteria->setOrder('ASC');
 
+        // Total count without limit/start for pagenav
+        $totalFields = $fieldHandler->getCount($fieldCriteria);
+        // Apply pagination
+        $fieldCriteria->setStart($start);
+        $fieldCriteria->setLimit($limit);
         $fields     = $fieldHandler->getObjects($fieldCriteria);
         $fieldsList = [];
 
@@ -86,8 +97,19 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('module_filter', $moduleFilter);
         $GLOBALS['xoopsTpl']->assign('fields', $fieldsList);
         $GLOBALS['xoopsTpl']->assign('has_fields', !empty($fieldsList));
-        $GLOBALS['xoopsTpl']->assign('total_fields', count($fieldsList));
+        $GLOBALS['xoopsTpl']->assign('total_fields', (int)$totalFields);
         $GLOBALS['xoopsTpl']->assign('token_html', $GLOBALS['xoopsSecurity']->getTokenHTML());
+
+        // Build page navigation
+        $extraArgs = array();
+        if ($moduleFilter !== '') { $extraArgs['module'] = $moduleFilter; }
+        if ($limit !== 20) { $extraArgs['limit'] = $limit; }
+        $extraQuery = '';
+        if (!empty($extraArgs)) {
+            $extraQuery = http_build_query($extraArgs);
+        }
+        $nav = new \XoopsPageNav($totalFields, $limit, $start, 'start', $extraQuery);
+        $GLOBALS['xoopsTpl']->assign('pagenav', $nav->renderNav());
 
         break;
 }
