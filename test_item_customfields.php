@@ -7,6 +7,14 @@
 
 require __DIR__ . '/header.php';
 
+require_once __DIR__ . '/include/functions.php';
+
+if (!customfields_isAdminUser()) {
+    header('HTTP/1.1 403 Forbidden');
+    echo '<!doctype html><meta charset="utf-8"><title>Forbidden</title><p>Access denied.</p>';
+    exit;
+}
+
 echo '<html><head><meta charset="utf-8"><title>' . _MD_CUSTOMFIELDS_ITEM_TEST_TITLE . '</title></head><body>';
 echo '<div style="max-width: 1200px; margin: 0 auto; padding: 20px; font-family: Arial;">';
 echo '<h1>🔍 ' . _MD_CUSTOMFIELDS_ITEM_TEST_TITLE . '</h1>';

@@ -2,10 +2,10 @@
 
 // Admin language constants for Tests tab
 if (!defined('_AM_CUSTOMFIELDS_TESTS_TITLE')) {
-    define('_AM_CUSTOMFIELDS_TESTS_TITLE', 'Tests');
+    define('_AM_CUSTOMFIELDS_TESTS_TITLE', 'Admin Diagnostics');
 }
 if (!defined('_AM_CUSTOMFIELDS_TESTS_DESC')) {
-    define('_AM_CUSTOMFIELDS_TESTS_DESC', 'Developer test helpers for CustomFields integration. Use on non-production systems.');
+    define('_AM_CUSTOMFIELDS_TESTS_DESC', 'Safe, admin-only diagnostics for CustomFields. Use only on development systems.');
 }
 if (!defined('_AM_CUSTOMFIELDS_TESTS_TH_SCRIPT')) {
     define('_AM_CUSTOMFIELDS_TESTS_TH_SCRIPT', 'Script');
@@ -21,6 +21,143 @@ if (!defined('_AM_CUSTOMFIELDS_TESTS_OPEN_BTN')) {
 }
 if (!defined('_AM_CUSTOMFIELDS_TESTS_NOTE')) {
     define('_AM_CUSTOMFIELDS_TESTS_NOTE', 'Note: Some scripts may expose diagnostic information. Keep them admin-only and avoid use on production.');
+}
+
+// Diagnostics UI strings
+if (!defined('_AM_CUSTOMFIELDS_ENVIRONMENT')) {
+    define('_AM_CUSTOMFIELDS_ENVIRONMENT', 'Environment');
+}
+if (!defined('_AM_CUSTOMFIELDS_LOG_PATH')) {
+    define('_AM_CUSTOMFIELDS_LOG_PATH', 'Log path');
+}
+if (!defined('_AM_CUSTOMFIELDS_DIR_WRITABLE')) {
+    define('_AM_CUSTOMFIELDS_DIR_WRITABLE', 'Directory writable');
+}
+if (!defined('_AM_CUSTOMFIELDS_YES')) {
+    define('_AM_CUSTOMFIELDS_YES', 'Yes');
+}
+if (!defined('_AM_CUSTOMFIELDS_NO')) {
+    define('_AM_CUSTOMFIELDS_NO', 'No');
+}
+if (!defined('_AM_CUSTOMFIELDS_TARGET_MODULE')) {
+    define('_AM_CUSTOMFIELDS_TARGET_MODULE', 'Target module');
+}
+if (!defined('_AM_CUSTOMFIELDS_CHANGE_TARGET_HINT')) {
+    define('_AM_CUSTOMFIELDS_CHANGE_TARGET_HINT', 'You can change `target_module` via the query string, e.g. ?target_module=publisher');
+}
+if (!defined('_AM_CUSTOMFIELDS_AVAILABLE_FIELDS')) {
+    define('_AM_CUSTOMFIELDS_AVAILABLE_FIELDS', 'Available fields');
+}
+if (!defined('_AM_CUSTOMFIELDS_COL_ID')) {
+    define('_AM_CUSTOMFIELDS_COL_ID', 'ID');
+}
+if (!defined('_AM_CUSTOMFIELDS_COL_NAME')) {
+    define('_AM_CUSTOMFIELDS_COL_NAME', 'Name');
+}
+if (!defined('_AM_CUSTOMFIELDS_COL_TITLE')) {
+    define('_AM_CUSTOMFIELDS_COL_TITLE', 'Title');
+}
+if (!defined('_AM_CUSTOMFIELDS_COL_TYPE')) {
+    define('_AM_CUSTOMFIELDS_COL_TYPE', 'Type');
+}
+if (!defined('_AM_CUSTOMFIELDS_NO_FIELDS_FOUND')) {
+    define('_AM_CUSTOMFIELDS_NO_FIELDS_FOUND', 'No fields found for this module.');
+}
+if (!defined('_AM_CUSTOMFIELDS_MANUAL_SAVE')) {
+    define('_AM_CUSTOMFIELDS_MANUAL_SAVE', 'Manual save simulation');
+}
+if (!defined('_AM_CUSTOMFIELDS_MANUAL_SAVE_DESC')) {
+    define('_AM_CUSTOMFIELDS_MANUAL_SAVE_DESC', 'This POST-only action calls customfields_saveData() for a demo item ID (9999) using sample values. A valid XOOPS security token is required.');
+}
+if (!defined('_AM_CUSTOMFIELDS_RUN_MANUAL_TEST')) {
+    define('_AM_CUSTOMFIELDS_RUN_MANUAL_TEST', 'Run manual test');
+}
+if (!defined('_AM_CUSTOMFIELDS_OPERATION_FAILED')) {
+    define('_AM_CUSTOMFIELDS_OPERATION_FAILED', 'Operation failed.');
+}
+if (!defined('_AM_CUSTOMFIELDS_SAVE_COMPLETED')) {
+    define('_AM_CUSTOMFIELDS_SAVE_COMPLETED', 'Save completed for item');
+}
+if (!defined('_AM_CUSTOMFIELDS_ROWS_FOUND')) {
+    define('_AM_CUSTOMFIELDS_ROWS_FOUND', 'Rows found');
+}
+// Flow Analyzer
+if (!defined('_AM_CUSTOMFIELDS_TAB_OVERVIEW')) {
+    define('_AM_CUSTOMFIELDS_TAB_OVERVIEW', 'Overview');
+}
+if (!defined('_AM_CUSTOMFIELDS_TAB_FLOW')) {
+    define('_AM_CUSTOMFIELDS_TAB_FLOW', 'Publisher Flow Analyzer');
+}
+if (!defined('_AM_CUSTOMFIELDS_FLOW_TITLE')) {
+    define('_AM_CUSTOMFIELDS_FLOW_TITLE', 'Publisher item.php Flow Analysis');
+}
+if (!defined('_AM_CUSTOMFIELDS_FILE_FOUND')) {
+    define('_AM_CUSTOMFIELDS_FILE_FOUND', 'File found');
+}
+if (!defined('_AM_CUSTOMFIELDS_FILE_NOT_FOUND')) {
+    define('_AM_CUSTOMFIELDS_FILE_NOT_FOUND', 'File not found');
+}
+if (!defined('_AM_CUSTOMFIELDS_RENDERFORM_SECTION')) {
+    define('_AM_CUSTOMFIELDS_RENDERFORM_SECTION', '1. Check for customfields_renderForm');
+}
+if (!defined('_AM_CUSTOMFIELDS_SAVEDATA_SECTION')) {
+    define('_AM_CUSTOMFIELDS_SAVEDATA_SECTION', '2. Check for customfields_saveData');
+}
+if (!defined('_AM_CUSTOMFIELDS_FLOW_SECTION')) {
+    define('_AM_CUSTOMFIELDS_FLOW_SECTION', '3. Flow ordering after itemObj->store()');
+}
+if (!defined('_AM_CUSTOMFIELDS_FOUND_AT_LINE')) {
+    define('_AM_CUSTOMFIELDS_FOUND_AT_LINE', 'Found at line %d');
+}
+if (!defined('_AM_CUSTOMFIELDS_FLOW_STEP1')) {
+    define('_AM_CUSTOMFIELDS_FLOW_STEP1', 'Store() appears around line %d');
+}
+if (!defined('_AM_CUSTOMFIELDS_FLOW_STEP2')) {
+    define('_AM_CUSTOMFIELDS_FLOW_STEP2', 'customfields_saveData() appears at line %d');
+}
+if (!defined('_AM_CUSTOMFIELDS_FLOW_STEP3')) {
+    define('_AM_CUSTOMFIELDS_FLOW_STEP3', 'redirect_header() appears at line %d');
+}
+if (!defined('_AM_CUSTOMFIELDS_RESULT_OK_TITLE')) {
+    define('_AM_CUSTOMFIELDS_RESULT_OK_TITLE', 'Looks good');
+}
+if (!defined('_AM_CUSTOMFIELDS_RESULT_OK_MSG')) {
+    define('_AM_CUSTOMFIELDS_RESULT_OK_MSG', 'customfields_saveData() is called before the first redirect after store().');
+}
+if (!defined('_AM_CUSTOMFIELDS_RESULT_BAD_TITLE')) {
+    define('_AM_CUSTOMFIELDS_RESULT_BAD_TITLE', 'Potential issue');
+}
+if (!defined('_AM_CUSTOMFIELDS_RESULT_BAD_MSG')) {
+    define('_AM_CUSTOMFIELDS_RESULT_BAD_MSG', 'A redirect header happens before customfields_saveData(). Ensure saving occurs before any redirect.');
+}
+if (!defined('_AM_CUSTOMFIELDS_NO_SAVE_FOUND')) {
+    define('_AM_CUSTOMFIELDS_NO_SAVE_FOUND', 'customfields_saveData() was not found near the store() block.');
+}
+if (!defined('_AM_CUSTOMFIELDS_NO_REDIRECT_FOUND')) {
+    define('_AM_CUSTOMFIELDS_NO_REDIRECT_FOUND', 'redirect_header() was not found near the store() block.');
+}
+if (!defined('_AM_CUSTOMFIELDS_CODE_BLOCK')) {
+    define('_AM_CUSTOMFIELDS_CODE_BLOCK', 'Code block after store()');
+}
+// Logs panel
+if (!defined('_AM_CUSTOMFIELDS_LOGS_TITLE')) {
+    define('_AM_CUSTOMFIELDS_LOGS_TITLE', 'Recent log entries');
+}
+if (!defined('_AM_CUSTOMFIELDS_CF_LOG')) {
+    define('_AM_CUSTOMFIELDS_CF_LOG', 'CustomFields log');
+}
+if (!defined('_AM_CUSTOMFIELDS_PHP_ERROR_LOG')) {
+    define('_AM_CUSTOMFIELDS_PHP_ERROR_LOG', 'PHP error_log');
+}
+if (!defined('_AM_CUSTOMFIELDS_NO_CF_LOG_ENTRIES')) {
+    define('_AM_CUSTOMFIELDS_NO_CF_LOG_ENTRIES', 'No CustomFields-related entries were found.');
+}
+// Simulation
+if (!defined('_AM_CUSTOMFIELDS_SIMULATE_ERROR')) {
+    define('_AM_CUSTOMFIELDS_SIMULATE_ERROR', 'Simulate error (force rollback)');
+}
+if (!defined('_AM_CUSTOMFIELDS_ROLLBACK_OCCURRED')) {
+    define('_AM_CUSTOMFIELDS_ROLLBACK_OCCURRED', 'A simulated error forced a rollback. This is expected for the test.');
 }
 
 // Admin menu

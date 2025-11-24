@@ -18,9 +18,10 @@ function debug_log($message) {
 }
 
 require __DIR__ . '/header.php';
+require_once __DIR__ . '/include/functions.php';
 
 // Gate this page behind admin permission to avoid exposure in production
-if (!isset($xoopsUser) || !is_object($xoopsUser) || !defined('XOOPS_GROUP_ADMIN') || !in_array(XOOPS_GROUP_ADMIN, $xoopsUser->getGroups(), true)) {
+if (!customfields_isAdminUser()) {
     header('HTTP/1.1 403 Forbidden');
     echo '<!doctype html><meta charset="utf-8"><title>Forbidden</title><p>Access denied.</p>';
     exit;

@@ -48,6 +48,27 @@ a:visited {
     font-size: 14px;
 }
 
+.cf-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cf-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.cf-btn-secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.cf-btn-secondary:hover {
+    background: #cbd5e0;
+}
+
+
 .cf-btn-white {
     background: white;
     color: #667eea;

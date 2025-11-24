@@ -4,6 +4,14 @@
  */
 
 require __DIR__ . '/header.php';
+require_once __DIR__ . '/include/functions.php';
+
+if (!customfields_isAdminUser()) {
+    header('HTTP/1.1 403 Forbidden');
+    echo '<!doctype html><meta charset="utf-8"><title>Forbidden</title><p>Access denied.</p>';
+    exit;
+}
+
 
 echo '<html><head><meta charset="utf-8"><title>' . _MD_CUSTOMFIELDS_PUB_CHECK_PAGE_TITLE . '</title></head><body>';
 echo '<h2>' . _MD_CUSTOMFIELDS_PUB_ITEM_CHECK . '</h2>';

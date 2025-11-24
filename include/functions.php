@@ -41,6 +41,66 @@ function customfields_esc($value)
 }
 
 /**
+ * Determine whether the current XOOPS user has admin privileges for this module.
+ *
+ * Priority:
+ *  1) If a module context is available, use `$user->isAdmin($moduleMid)`.
+ *  2) Fallback to group-based admin check (membership in XOOPS_GROUP_ADMIN).
+ *
+ * Keeping the fallback preserves compatibility with older checks and unit tests
+ * that don't bootstrap a full XOOPS environment.
+ *
+ * @param object|null $user    Optional XOOPS user object (defaults to $GLOBALS['xoopsUser'])
+ * @param object|null $module  Optional XOOPS module object (defaults to $GLOBALS['xoopsModule'])
+ * @return bool
+ */
+function customfields_isAdminUser($user = null, $module = null)
+{
+    if ($user === null && isset($GLOBALS['xoopsUser'])) {
+        $user = $GLOBALS['xoopsUser'];
+    }
+    if ($module === null && isset($GLOBALS['xoopsModule'])) {
+        $module = $GLOBALS['xoopsModule'];
+    }
+
+    if (!is_object($user)) {
+        return false;
+    }
+
+    // Prefer module-admin privilege when possible (admin area typically sets xoopsModule)
+    $mid = 0;
+    if (is_object($module)) {
+        if (method_exists($module, 'getVar')) {
+            $mid = (int)$module->getVar('mid');
+        } elseif (method_exists($module, 'mid')) {
+            $mid = (int)$module->mid();
+        }
+    }
+    if ($mid > 0 && method_exists($user, 'isAdmin')) {
+        // If user is module admin, grant access.
+        try {
+            if ($user->isAdmin($mid)) {
+                return true;
+            }
+        } catch (\Throwable $e) {
+            // Fall through to group check if environment is partial.
+        }
+    }
+
+    // Fallback definition for unit tests that do not load the full XOOPS core
+    if (!defined('XOOPS_GROUP_ADMIN')) {
+        define('XOOPS_GROUP_ADMIN', 1);
+    }
+
+    // Group-based super admin check (classic group 1)
+    if (method_exists($user, 'getGroups')) {
+        return in_array((int)XOOPS_GROUP_ADMIN, (array)$user->getGroups(), true);
+    }
+
+    return false;
+}
+
+/**
  * Build a safe absolute URL from a module-relative path (e.g. 'uploads/customfields/file.jpg').
  * Ensures no leading '../' path traversal and normalizes slashes.
  *
@@ -50,12 +110,26 @@ function customfields_esc($value)
 function customfields_url($relative)
 {
     $rel = (string)$relative;
-    // Strip any scheme and host if accidentally provided
+    // Strip any scheme and host if accidentally provided (http://example.com/foo)
     $rel = preg_replace('#^[a-z]+://[^/]+#i', '', $rel);
-    // Remove leading slashes and any ../ sequences
-    $rel = ltrim($rel, "/\\");
-    $rel = preg_replace('#\.\./#', '', $rel);
-    return rtrim((string)XOOPS_URL, '/') . '/' . $rel;
+    // Block script-style schemes like javascript: or mailto:
+    $rel = preg_replace('#^[a-z]+:\\/?#i', '', $rel);
+
+    // Normalise slashes and collapse traversal segments
+    $rel = str_replace('\\', '/', $rel);
+    $rel = preg_replace('#/+#', '/', $rel);
+
+    $parts = array();
+    foreach (explode('/', ltrim($rel, '/')) as $part) {
+        if ($part === '' || $part === '.' || $part === '..') {
+            continue;
+        }
+        $parts[] = $part;
+    }
+
+    $cleanPath = implode('/', $parts);
+
+    return rtrim((string)XOOPS_URL, '/') . '/' . $cleanPath;
 }
 
 /**
@@ -426,6 +500,13 @@ function customfields_saveData($module_name, $item_id, array $ctx = array())
         } else {
             Logger::info("Field $field_name NOT in POST data");
         }
+    }
+
+    // Admin-only simulation hook: allow forcing a rollback for diagnostics
+    $simulateError = isset($ctx['simulate_error']) && $ctx['simulate_error'] === true;
+    if ($simulateError && customfields_isAdminUser()) {
+        $allOk = false; // force rollback path for testing
+        Logger::info('CustomFields saveData: simulate_error flag detected, forcing rollback.');
     }
 
     if ($inTransaction) {
